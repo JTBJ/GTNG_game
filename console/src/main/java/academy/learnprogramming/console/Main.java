@@ -1,16 +1,11 @@
 package academy.learnprogramming.console;
 
 import academy.learnprogramming.config.AppConfig;
-import academy.learnprogramming.events.ConsoleNumberGuessListener;
-import academy.learnprogramming.game.Game;
-import academy.learnprogramming.messageGenerator.MessageGenerator;
-import academy.learnprogramming.numberGenerator.NumberGenerator;
-import academy.learnprogramming.numberGenerator.NumberGeneratorImpl;
+import academy.learnprogramming.config.GameConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
@@ -22,10 +17,10 @@ public class Main {
 
         // create context (container)
         ConfigurableApplicationContext context =
-                new AnnotationConfigApplicationContext(AppConfig.class);
+                new AnnotationConfigApplicationContext(GameConfig.class);
 
         // get numberGenerator bean from context (container)
-        NumberGenerator numberGenerator =
+        /*NumberGenerator numberGenerator =
                 context.getBean(NumberGenerator.class);
 
         // call method next() to get a random number
@@ -43,6 +38,7 @@ public class Main {
         // call methods on messageGenerator
         System.out.println(messageGenerator.getMainMessage());
         System.out.println(messageGenerator.getResultMessage());
+        */
 
         // close context (container)
         context.close();

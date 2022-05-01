@@ -19,11 +19,22 @@ public class ConsoleNumberGuessListener {
     private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuessListener.class);
 
     // == fields ==
-    @Autowired
+    /*@Autowired
     private Game game;
 
     @Autowired
-    private MessageGenerator messageGenerator;
+    private MessageGenerator messageGenerator;*/
+
+    private final Game game;
+
+    private final MessageGenerator messageGenerator;
+
+    // == constructor ==
+    //@Autowired
+    public ConsoleNumberGuessListener(Game game, MessageGenerator messageGenerator) {
+        this.game = game;
+        this.messageGenerator = messageGenerator;
+    }
 
     // == events ==
     @EventListener(ContextRefreshedEvent.class)

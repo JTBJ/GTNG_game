@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- enable annotations (notice entrees for context above) -->
+    <!-- <context:annotation-config />-->
+    <context:component-scan base-package="academy.learnprogramming" />
+
+    <!-- beans-->
+    <!-- <bean id="numberGenerator" class="academy.learnprogramming.numberGenerator.NumberGeneratorImpl" />-->
+
+    <!-- constructor injection -->
+    <!-- <bean id="game" class="academy.learnprogramming.game.GameImpl">
+        <constructor-arg ref="numberGenerator" />
+    </bean> -->
+
+    <!-- setter injection -->
+    <!-- <bean id="game" class="academy.learnprogramming.game.GameImpl" />-->
+        <!-- <property name="numberGenerator" ref="numberGenerator" />-->
+    <!-- </bean>-->
+
+    <!-- setter injection with init callback method-->
+    <!-- <bean id="game" class="academy.learnprogramming.game.GameImpl" init-method="reset">
+        <property name="numberGenerator" ref="numberGenerator" />
+    </bean> -->
+
+    <!-- support for life cycle callback (annotation) -->
+    <!-- remove because of the addition of context:annotation-config above -->
+    <!-- <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />-->
+</beans>
