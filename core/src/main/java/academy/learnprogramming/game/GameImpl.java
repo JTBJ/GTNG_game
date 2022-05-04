@@ -2,6 +2,10 @@ package academy.learnprogramming.game;
 
 import academy.learnprogramming.custom_annotations.GuessCount;
 import academy.learnprogramming.numberGenerator.NumberGenerator;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,32 +14,29 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Slf4j
+@Getter
 @Component
 public class GameImpl implements Game {
 
-    // == constants ==
-    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
+    {/*/ == constants ==
+    //private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
 
     // == fields ==
-    /*@Autowired
+    @Autowired
     private NumberGenerator numberGenerator;
 
     @Autowired
     @GuessCount
-    private int guessCount;*/
+    private int guessCount;*/}
 
+    @Getter(AccessLevel.NONE)
     private final NumberGenerator numberGenerator;
 
     private final int guessCount;
-
-    // == constructor ==
-    //@Autowired
-    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
-        this.numberGenerator = numberGenerator;
-        this.guessCount = guessCount;
-    }
-
     private int number;
+
+    @Setter
     private int guess;
 
     private int smallest;
@@ -43,6 +44,13 @@ public class GameImpl implements Game {
     private int biggest;
     private int remainingGuesses;
     private boolean validNumberRange = true;
+
+    // == constructor ==
+    //@Autowired
+    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
+        this.numberGenerator = numberGenerator;
+        this.guessCount = guessCount;
+    }
 
     // == init method ==
     @PostConstruct
@@ -61,7 +69,7 @@ public class GameImpl implements Game {
         log.info("In Game preDestroy()");
     }
 
-    // == constructors ==
+    {// == constructors ==
     /*public GameImpl(){}
 
     public GameImpl(NumberGenerator numberGenerator) {
@@ -74,12 +82,12 @@ public class GameImpl implements Game {
     }*/
 
     // == public methods ==
-    @Override
-    public int getNumber() {
-        return number;
-    }
+//    @Override
+//    public int getNumber() {
+//        return number;
+//    }
 
-    @Override
+    /*@Override
     public int getGuess() {
         return guess;
     }
@@ -87,9 +95,9 @@ public class GameImpl implements Game {
     @Override
     public void setGuess(int guess) {
         this.guess = guess;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public int getSmallest() {
         return smallest;
     }
@@ -107,7 +115,7 @@ public class GameImpl implements Game {
     @Override
     public int getGuessCount() {
         return guessCount;
-    }
+    }*/}
 
     @Override
     public void check() {
@@ -124,10 +132,10 @@ public class GameImpl implements Game {
         remainingGuesses--;
     }
 
-    @Override
+    /*@Override
     public boolean isValidNumberRange() {
         return validNumberRange;
-    }
+    }*/
 
     @Override
     public boolean isGameWon() {
