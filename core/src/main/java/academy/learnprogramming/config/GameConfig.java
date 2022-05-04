@@ -9,6 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * @Configuration class specifies the configuration of the spring container, capable of replacing
+ * the legacy XML based configuration. @ComponentScan tells the container to scan the package passed
+ * and sub-packages for classes headed with the @Component annotation and register those classes as
+ * beans with the spring container. An alternative to using @ComponentScan / @Component is to define
+ * the bean definitions within the container class, the one headed with the @Configuration annotation.
+ */
 @Configuration
 @ComponentScan("academy.learnprogramming")
 @PropertySource("classpath:config/game.properties")
