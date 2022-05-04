@@ -53,55 +53,7 @@ public class GameImpl implements Game {
     public void preDestroy() {
         log.info("In Game preDestroy()");
     }
-
-    {// == constructors ==
-    /*public GameImpl(){}
-
-    public GameImpl(NumberGenerator numberGenerator) {
-        this.numberGenerator = numberGenerator;
-    }*/
-
-    // == setter for dependency injection
-    /*public void setNumberGenerator(NumberGenerator numberGenerator){
-        this.numberGenerator = numberGenerator;
-    }*/
-
-    // == public methods ==
-//    @Override
-//    public int getNumber() {
-//        return number;
-//    }
-
-    /*@Override
-    public int getGuess() {
-        return guess;
-    }
-
-    @Override
-    public void setGuess(int guess) {
-        this.guess = guess;
-    }*/
-
-    /*@Override
-    public int getSmallest() {
-        return smallest;
-    }
-
-    @Override
-    public int getBiggest() {
-        return biggest;
-    }
-
-    @Override
-    public int getRemainingGuesses() {
-        return remainingGuesses;
-    }
-
-    @Override
-    public int getGuessCount() {
-        return guessCount;
-    }*/}
-
+    
     @Override
     public void check() {
         checkValidNumberRange();
